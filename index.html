@@ -1,384 +1,305 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Web Animation Weekly</title>
+  <head>
+    <title>Animation at Work Newsletter</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web Animation Weekly Email Forms">
-    <meta name="keywords" content="Web Animation Weekly">
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:900' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-	
-	<style>
-	
-		body{
-			font-family: 'Roboto', sans-serif;	
-			text-align: center;
-			margin: 0;
-			font-size: 1.2rem;
-		}
-	
-		h1 {
-			font-family: 'Alegreya Sans', sans-serif;
-			color: #C7436D;
-			
-		}
-		
-		a.urls {
-			color: #C7436D;
-		}
-        
-		a.urls:visited {
-			color: #F595B3;
-		}
-		
-		.main{
-			width: calc(100% - 2rem);
-			max-width: 600px;
-			margin: 0 auto;
-		}
-		
-		.container {
-			width: 90vw;
-			height: 60vw;
-			max-height: 400px;
-			max-width: 600px;
-			position: relative;	
-			overflow: hidden;
-		}
-			
-		.scene {
-			width: 90vw;
-			height: 60vw;
-			max-height: 400px;
-			max-width: 600px;
-			position: absolute;
-			background-repeat: no-repeat;
-			background-position: 50% 50%;
-			background-size: contain;
-			
-		}
-				
-		.screen {
-			width: 45%;
-			height: 28%;
-			top: 15%;
-			left: 28%;
-			position: absolute;
-			background: url(cubic.gif) no-repeat 50% 50%;
-			background-size: contain;
-		}
-		
-		.tail {
-			background-image: url(catTail.png); 
-			background-size: cover; 
-			background-position: 0% 50%
-		}
-		
-		.steam {
-			width: 28%;
-			height: 51%;
-			position: absolute;
-			left: 19%;
-			top: 21%;
-			background: url(steam.png) no-repeat 50% 50%;
-			background-size: contain;
-			transform-origin: bottom center;
-			opacity: 0;
-		}
-		
-		.description {
-			text-align: left;
-			margin: 2rem auto;
-		}
-		
-		.subscrEmail {
-			font-size: 1.5rem;
-			height: 3.1rem;
-			width: calc(100% - 15rem);
-			min-width: 250px;
-			margin: 0.5rem 0 0.5rem 0;
-			float: left;
-			outline-color: #C7436D;
-			color: #C7436D;
-		}
-		
-		.subscrButton {
-			font-size: 1.5rem;
-			height: 3.5rem;
-			width: 12rem;
-			margin: 0.5rem 0;
-			background: #C7436D;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			transition: 0.1s;
-		}
-		
-		.subscrButton:active {
-			background: #EC5384;
-			transition: 0.1s;
-		}
-		
-			
-		.info {
-			margin: 8rem auto 8rem auto;
-		}
-		
-		.ava {
-			width: 7rem;
-			height: 7rem;
-			border-radius: 7rem;
-			background: url(ava.png) no-repeat 50% 50%;
-			background-size: contain;
-			display: inline-block;
-		}
-				
-		.infoText {
-			width: calc(100% - 8rem);
-			min-width: 300px;
-			display: inline-block;
-			vertical-align: top;
-		}
-		
-		.submitButton {
-			display: block;
-			text-decoration: none;
-			line-height: 3.5rem;
-			margin: 1rem auto;
-		}
-		
-        .archive {
-            width: 200px;
-            height: 120px;
-            margin: 0 auto;
-            display: block;
-            background: url(archive.png) no-repeat 50% 50%;
-            background-size: contain;
-            cursor: pointer;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Animation at Work Newsletter Email Forms"
+    />
+    <meta name="keywords" content="Animation at Work Newsletter" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Animation at Work Newsletter</h1>
+
+      <div class="container">
+        <div class="scene" style="background-image: url(workspace.png)">
+          <div class="screen"></div>
+          <div class="steam" id="steam1"></div>
+          <div class="steam" id="steam2"></div>
+          <div class="steam" id="steam3"></div>
+          <div class="steam" id="steam4"></div>
+          <div class="steam" id="steam5"></div>
+          <div class="steam" id="steam6"></div>
+          <div class="steam" id="steam7"></div>
+          <div class="steam" id="steam8"></div>
+          <div class="steam" id="steam9"></div>
+
+          <div class="scene" style="background-image: url(catBody.png)"></div>
+          <div class="scene" style="background-image: url(cup.png)"></div>
+          <div class="scene tail" id="catTail"></div>
+        </div>
+      </div>
+
+      <div class="description">
+        A hand-picked selection of articles, videos, book reviews, and other
+        goodies pertaining to the wonderful worlds of web animation and motion
+        design!
+      </div>
+
+      <!-- Begin MailChimp Signup Form -->
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/classic-081711.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        #mc_embed_signup form {
+          display: block;
+          position: relative;
+          text-align: center;
+          padding: 0;
         }
-        
-		.credits {
-			background: #777;
-			color: #aaa;
-			padding: 2rem;
-			margin-top: 8rem;
-		}
-		
-		.creditBlock {
-			width: 100%;
-			max-width: 300px;
-			display: inline-block;
-		}
-		
-		.logo {
-			width: 7rem;
-			height: 7rem;
-			border-radius: 7rem;
-			background: no-repeat 50% 50%;
-			background-size: contain;
-			display: inline-block;
-		}
-		
-		
-		@media screen and (max-width: 700px) {
-            .subscrEmail {
-                width: 80%;
-                float: none;
-            }
 
-            .ava {
-                margin: 0 auto;
-                display: block;
-            }
+        #mc_embed_signup .mc-field-group {
+          clear: none;
+          width: 100%;
+          padding-bottom: 0;
+          min-height: 0;
+        }
 
-            .creditBlock {
-                margin-bottom: 2rem;
-            }
-		}
-		
-	</style>
-	
-	<script>
-			
-		window.onload = function() {
-		
-			var i = 0;
-			while (i < 10) {
-				TweenMax.fromTo("#steam"+(i+1), 10, {opacity:1, scale:0}, 
-								  			        {opacity:0, scale:1.7, repeat:-1, delay:i, ease: Power2.easeIn} );
-			i++;};
-						
-			TweenMax.to("#catTail",0.35, {backgroundPosition:"100% 50%", 
-										  ease:SteppedEase.config(4), repeat:-1, repeatDelay:1, yoyo:true} );			
-		}
-		
-	</script>
-	
-</head>
+        #mc_embed_signup .mc-field-group input {
+          display: inline-block;
+          width: calc(100% - 15rem);
+          padding: 3px 0;
+          text-indent: 2%;
+        }
 
-<body>
-	
-	<div class="main">
-	
-		<h1>Web Animation Weekly</h1>
-		
-		<div class="container">
-			<div class="scene" style="background-image: url(workspace.png)">
-				<div class="screen"></div>
-			</div>
-		
-			<div class="steam" id="steam1"></div>
-			<div class="steam" id="steam2"></div>
-			<div class="steam" id="steam3"></div>
-			<div class="steam" id="steam4"></div>
-			<div class="steam" id="steam5"></div>
-			<div class="steam" id="steam6"></div>
-			<div class="steam" id="steam7"></div>
-			<div class="steam" id="steam8"></div>
-			<div class="steam" id="steam9"></div>
-		
-			<div class="scene" style="background-image: url(catBody.png)"></div>
-			<div class="scene" style="background-image: url(cup.png)"></div>
-			<div class="scene tail" id="catTail"></div>
-			
-		</div>	
-						
-		<div class="description">
-			A hand-picked selection of articles, videos, book reviews, and other goodies pertaining to the wonderful worlds of web animation and motion design!
-		</div>			
-		
-		<!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	
-	#mc_embed_signup form {
-		display: block;
-		position: relative;
-		text-align: center;
-		padding: 0;
-	}
-	
-	#mc_embed_signup .mc-field-group {
-		clear: none;
-		width: 100%;
-		padding-bottom: 0;
-		min-height: 0;
-	}
-	
-	#mc_embed_signup .mc-field-group input {
-		display: inline-block;
-		width: calc(100% - 15rem);
-		padding: 3px 0;
-		text-indent: 2%;
-	}
-	
-	#mc_embed_signup div.mce_inline_error {
-		position: absolute;
-		top: 3.7rem;
-		background-color: transparent;
-		color: #C7436D;
-		width: calc(100% - 15rem);
-	}
-	
-	#mc_embed_signup .clear {
-		 clear: none; 
-	}
-	
-	#mc_embed_signup .button {
-		clear: none;
-		background-color: #C7436D;
-		border: none;
-		border-radius: 0;
-		color: #FFFFFF;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 1.5rem;
-		font-weight: normal;
-		height: 3.5rem;
-		line-height: 3.5rem;
-		margin: 0.5rem 0;
-		padding: 0;
-		text-align: center;
-		text-decoration: none;
-		vertical-align: top;
-		white-space: nowrap;
-		width: 12rem;
-	}
-	
-	#mc_embed_signup .button:hover {
-		background-color: #C7436D;
-	}
-	
-	#mc_embed_signup .button:active {
-		background-color: #EC5384;
-	}
-	
-	#mc_embed_signup div.response {
-		width: 100%;
-		color: #C7436D;
-	}
-		
-	@media screen and (max-width: 700px) {
-		#mc_embed_signup .mc-field-group input {
-			width: 80%;
-		}
-		
-		#mc_embed_signup div.mce_inline_error {
-			top: 9rem;
-			width: 100%;
-		}
-	}
-	
-</style>
-<div id="mc_embed_signup">
-<form action="//webanimationweekly.us1.list-manage.com/subscribe/post?u=0a8f219cf8284562f91a26ee9&amp;id=d60f6683d2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-		<div class="mc-field-group">
-			<label for="mce-EMAIL"></label>
-			<input type="email" value="" name="EMAIL" class="required email subscrEmail" placeholder="E-mail address" id="mce-EMAIL">
-		</div>
-		<div id="mce-responses" class="clear">
-			<div class="response" id="mce-error-response" style="display:none"></div>
-			<div class="response" id="mce-success-response" style="display:none"></div>
-		</div>
-		<div style="position: absolute; left: -5000px;">
-			<input type="text" name="b_0a8f219cf8284562f91a26ee9_d60f6683d2" tabindex="-1" value="">
-		</div>
-		<div class="clear">
-			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button subscrButton">
-		</div>
+        #mc_embed_signup div.mce_inline_error {
+          position: absolute;
+          top: 3.7rem;
+          background-color: transparent;
+          color: #c7436d;
+          width: calc(100% - 15rem);
+        }
+
+        #mc_embed_signup .clear {
+          clear: none;
+        }
+
+        #mc_embed_signup .button {
+          clear: none;
+          background-color: #c7436d;
+          border: none;
+          border-radius: 0;
+          color: #ffffff;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 1.5rem;
+          font-weight: normal;
+          height: 3.5rem;
+          line-height: 3.5rem;
+          margin: 0.5rem 0;
+          padding: 0;
+          text-align: center;
+          text-decoration: none;
+          vertical-align: top;
+          white-space: nowrap;
+          width: 12rem;
+        }
+
+        #mc_embed_signup .button:hover {
+          background-color: #c7436d;
+        }
+
+        #mc_embed_signup .button:active {
+          background-color: #ec5384;
+        }
+
+        #mc_embed_signup div.response {
+          width: 100%;
+          color: #c7436d;
+        }
+
+        @media screen and (max-width: 700px) {
+          #mc_embed_signup .mc-field-group input {
+            width: 80%;
+          }
+
+          #mc_embed_signup div.mce_inline_error {
+            top: 9rem;
+            width: 100%;
+          }
+        }
+      </style>
+      <div id="mc_embed_signup">
+        <form
+          action="//webanimationweekly.us1.list-manage.com/subscribe/post?u=0a8f219cf8284562f91a26ee9&amp;id=d60f6683d2"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
+          <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+              <label for="mce-EMAIL"></label>
+              <input
+                type="email"
+                value=""
+                name="EMAIL"
+                class="required email subscrEmail"
+                placeholder="E-mail address"
+                id="mce-EMAIL"
+              />
+            </div>
+            <div id="mce-responses" class="clear">
+              <div
+                class="response"
+                id="mce-error-response"
+                style="display:none"
+              ></div>
+              <div
+                class="response"
+                id="mce-success-response"
+                style="display:none"
+              ></div>
+            </div>
+            <div style="position: absolute; left: -5000px;">
+              <input
+                type="text"
+                name="b_0a8f219cf8284562f91a26ee9_d60f6683d2"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+            <div class="clear">
+              <input
+                type="submit"
+                value="Subscribe"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                class="button subscrButton"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
+    </main>
+
+    <section class="attributes">
+      <div class="info">
+        <a href="http://rachelnabors.com/" class="ava">
+          <img src="./ava.png" alt="Rachel Nabors" />
+        </a>
+        <div class="infoText">
+          Founded by
+          <a class="urls" href="http://rachelnabors.com/">Rachel Nabors</a>.
+          <br />
+          <a
+            class="subscrButton submitButton"
+            href="https://abookapart.com/products/animation-at-work"
+            >Read the book!</a
+          >
+        </div>
+      </div>
+
+      <div class="info">
+        <a href="https://keyframe.rs" class="ava">
+          <img src="./keyframers.png" alt="Keyframers" />
+        </a>
+        <div class="infoText">
+          Curated by
+          <a class="urls" href="https://keyframe.rs">the @keyframers</a>
+          <a
+            class="subscrButton submitButton"
+            href="http://goo.gl/forms/lSufQ1D9mF"
+            >Submit a link</a
+          >
+        </div>
+      </div>
+
+      <div class="info">
+        <a
+          class="ava"
+          href="http://us1.campaign-archive1.com/home/?u=0a8f219cf8284562f91a26ee9&id=d60f6683d2"
+        >
+          <img src="./archive.png" alt="Archives" />
+        </a>
+        <div class="infoText">
+          Missed an issue? <br />
+          <a
+            class="subscrButton submitButton"
+            href="http://us1.campaign-archive1.com/home/?u=0a8f219cf8284562f91a26ee9&id=d60f6683d2"
+            >View the archives</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="credits">
+      <section class="creditBlock">
+        <span>sponsored by:</span><br />
+        <a
+          title="Tin Magpie"
+          class="urlsW logo"
+          style="background-image: url(tin.png)"
+          href="http://tinmagpie.com/"
+        ></a>
+      </section>
     </div>
-</form>
-</div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
-		
-		
-		<div class="info">
-			<div class="ava"></div>
-			<div class="infoText">
-				Curated by <a class="urls" href="http://rachelnabors.com/">Rachel Nabors</a> and people like you!
-				<br>
-				<a class="subscrButton submitButton" href="http://goo.gl/forms/lSufQ1D9mF">submit a link</a>				
-			</div>
-		</div>
-		
-        <a title="Archive" class="archive" href="http://us1.campaign-archive1.com/home/?u=0a8f219cf8284562f91a26ee9&id=d60f6683d2"></a>
-        Missed an issue? <br> <a class="urls" href="http://us1.campaign-archive1.com/home/?u=0a8f219cf8284562f91a26ee9&id=d60f6683d2">Check out the archive</a>
-				
-	</div>
-	
-	<div class="credits">
-		<section class='creditBlock'>
-			<span>sponsored by:</span><br>
-			<a title="Tin Magpie" class="urlsW logo" style="background-image: url(tin.png)" href="http://tinmagpie.com/"></a>
-		</section>
-				
-		<section class='creditBlock'>
-			<span>thanks to:</span><br>
-			<a title="Fluffy Move" class="urlsW logo" style="background-image: url(FM.png)" href="http://fluffymove.com/"></a>
-		</section>
-	</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script>
+      window.onload = function() {
+        var i = 0;
+        while (i < 10) {
+          TweenMax.fromTo(
+            "#steam" + (i + 1),
+            10,
+            { opacity: 1, scale: 0 },
+            {
+              opacity: 0,
+              scale: 1.7,
+              repeat: -1,
+              delay: i,
+              ease: Power2.easeIn
+            }
+          );
+          i++;
+        }
+
+        TweenMax.to("#catTail", 0.35, {
+          backgroundPosition: "100% 50%",
+          ease: SteppedEase.config(4),
+          repeat: -1,
+          repeatDelay: 1,
+          yoyo: true
+        });
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+    ></script>
+    <script type="text/javascript">
+      (function($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = "EMAIL";
+        ftypes[0] = "email";
+        fnames[1] = "FNAME";
+        ftypes[1] = "text";
+        fnames[2] = "LNAME";
+        ftypes[2] = "text";
+      })(jQuery);
+      var $mcj = jQuery.noConflict(true);
+    </script>
+  </body>
+</html>
