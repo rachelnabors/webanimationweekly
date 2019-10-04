@@ -1,0 +1,199 @@
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-family: "Alegreya Sans", sans-serif;
+  color: #c7436d;
+}
+
+a.urls {
+  color: #c7436d;
+}
+
+a.urls:visited {
+  color: #f595b3;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ---------------------------------- */
+
+.container {
+  width: 90vw;
+  height: 60vw;
+  max-height: 400px;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scene {
+  width: 90vw;
+  height: 60vw;
+  max-height: 400px;
+  max-width: 600px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+.screen {
+  width: 45%;
+  height: 28%;
+  top: 15%;
+  left: 28%;
+  position: absolute;
+  background: url(cubic.gif) no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.tail {
+  background-image: url(catTail.png);
+  background-size: cover;
+  background-position: 0% 50%;
+}
+
+.steam {
+  width: 28%;
+  height: 51%;
+  position: absolute;
+  left: 19%;
+  top: 21%;
+  background: url(steam.png) no-repeat 50% 50%;
+  background-size: contain;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+/* ---------------------------------- */
+
+.description {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.subscrEmail {
+  font-size: 1.5rem;
+  height: 3.1rem;
+  width: calc(100% - 15rem);
+  min-width: 250px;
+  margin: 0.5rem 0 0.5rem 0;
+  float: left;
+  outline-color: #c7436d;
+  color: #c7436d;
+}
+
+.subscrButton {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background: #c7436d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.subscrButton:active {
+  background: #ec5384;
+  transition: 0.1s;
+}
+
+/* ---------------------------------- */
+
+.attributes {
+  margin: 4rem auto;
+  display: flex;
+  align-items: flex-start;
+  max-width: 50em;
+}
+
+.info {
+  flex: 0 1 15em;
+  padding: 1rem;
+  margin: auto;
+  width: 15em;
+}
+
+.ava {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 7rem;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f0f1;
+}
+
+.ava img {
+  max-width: 100%;
+  height: auto;
+}
+
+.infoText {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.infoText small {
+  display: block;
+}
+
+.submitButton {
+  display: block;
+  text-decoration: none;
+  margin: 1rem auto;
+}
+
+/* ---------------------------------- */
+
+.credits {
+  background: #777;
+  color: #aaa;
+  padding: 2rem;
+  margin-top: 8rem;
+}
+
+.creditBlock {
+  width: 100%;
+  max-width: 300px;
+  display: inline-block;
+}
+
+.logo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 7rem;
+  background: no-repeat 50% 50%;
+  background-size: contain;
+  display: inline-block;
+}
+
+@media screen and (max-width: 700px) {
+  .subscrEmail {
+    width: 80%;
+    float: none;
+  }
+
+  .ava {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .creditBlock {
+    margin-bottom: 2rem;
+  }
+}
